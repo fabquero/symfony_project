@@ -1,0 +1,28 @@
+.bandeau{
+    display: flex;
+    background-color: #3c4caa;
+    padding: 1rem;
+    color: #DDDDDD;
+}
+.titreSite{
+    position: absolute;
+    right: 50%;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.menu{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.menu li{
+    border-left: #DDDDDD solid 2px;
+    border-right: #DDDDDD solid 2px;
+    padding: 1%;
+}
+
+.lienMenu{
+    color: #DDDDDD;
+    text-decoration: none;
+}

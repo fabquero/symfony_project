@@ -1,0 +1,36 @@
+.vote{
+    display: flex;
+    justify-content: space-around;
+}
+
+.vote img{
+    width: 2rem;
+    height: auto;
+}
+
+.vote a{
+    text-decoration: none;
+}
+.imgContent{
+    width: 25%;
+    height: auto;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2rem;
+}
+
+.article{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.article h1{
+    font-size: 4rem;
+}
+
+.article p{
+    font-size: 1rem;
+    margin: 2rem 13%;
+    word-break: break-all;
+}

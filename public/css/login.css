@@ -1,0 +1,65 @@
+.required{
+    width: 100px;
+    display: inline-block;
+    margin: 1rem;
+}
+
+input{
+    display: inline-block;
+}
+
+.cadreForm{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3c4caa;
+    padding: 2rem;
+    height: 20rem;
+    box-shadow: #000000 5px 5px 5px;
+}
+
+.form-control, .btn{
+    margin: 1rem;
+}
+
+label{
+    color: #DDDDDD;
+}
+
+h1{
+    color: #DDDDDD;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.lienInscription{
+    color: #DDDDDD;
+}
+
+.logout{
+    color: #a4caaa;
+    margin-right: 3rem;
+    font-size: 2rem;
+}
+
+.logout a{
+    color: #1ea471;
+    text-decoration: none;
+}
+
+.cadre>article>form *{
+    margin: 0.5rem;
+}
+
+#post_texte{
+    width: 15rem;
+    height: 5rem;
+}

@@ -1,0 +1,25 @@
+#etoile_argument{
+    width: 30vw;
+    height: 20vh;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+.avis{
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem;
+}
+
+.required, div>label {
+    width: 100px;
+    display: block;
+    margin: auto;
+}
+
+button[type=submit]{
+    width: 10rem;
+    margin: auto;
+    display: block;
+    border-radius: 30px;
+}
