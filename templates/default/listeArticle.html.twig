@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %} Liste des articles {% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/liste.css') }}">
+{% endblock %}
+
+{% block body %}
+    <section>
+        {% for article in articles %}
+            <a href="{{ path('articles',{"post":article.id}) }}">
+                <article class="articlePost">
+                    {% if article.nomImage is not empty %}
+                        <img class="imgPost" src="/images/articles/{{ asset(article.nomImage) }}">
+                    {%  endif %}
+                    <div class="texte">
+                        <h3 class="infoArticle">Utilisateur: {{ article.utilisateur }} </h3>
+                        <h3 class="infoArticle">Date: {{ article.date | format_datetime('full','short', locale='fr') }} </h3>
+                        <h2 class="titre"> <span class="sujet">Sujet:</span> {{ article.sujet }}</h2>
+                        <p>{{ article.texte }}</p>
+                    </div>
+                </article>
+            </a>
+        {% endfor %}
+    </section>
+{% endblock %}

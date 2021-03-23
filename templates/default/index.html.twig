@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}VargumentS{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+{% block body %}
+    <main>
+
+        {{ form_start(form) }}
+        {{ form_label(form) }}
+        <div class="recherche">
+            {{ form_widget(form) }}
+            <input type="image" alt="chercher" height="40" width="40" src="{{ asset('images/interne/recherche.png') }}">
+        </div>
+        {{ form_end(form) }}
+
+        <section>
+            <h2 class="titreNouveaute">What's up</h2>
+            <article>
+                <div class="article_up">
+                    <p>
+                        Utilisateur: {{ article.utilisateur }}
+                    </p>
+                    <p>
+                        {{ article.date |format_datetime('full', 'none', locale='fr') }}
+                    </p>
+                </div>
+                <p>
+                    {% if article.nomImage is not empty %}
+                        <a href="{{ path('articles',{'post':article.id}) }}">
+                            <img class="imgTitre" src="/images/articles/{{ asset(article.nomImage) }}" alt="">
+                        </a>
+                    {%  endif %}
+                </p>
+                <h3 class="titreArticle">
+                    {{ article.sujet }}
+                </h3>
+                <p class="texte">
+                    {{ article.texte }}
+                </p>
+                <div class="pourContre">
+                    <div class="vote_etoile">
+                        <p>{{ article.nbVoteGauche }}</p>
+                        <a href="{{ path('argument',{'idArticle':article.id,'couleur':'1'}) }}" class="lienEtoile">
+                            <img class="etoileImg" src="{{ asset('images/interne/etoileBleu.png') }}" alt="Une étoile bleu">
+                            <img class="etoileImg" src="{{ asset('images/interne/etoileBleu.png') }}" alt="une étoile bleu">
+                            <img class="etoileImg" src="{{ asset('images/interne/etoileBleu.png') }}" alt="une étoile bleu">
+                        </a>
+                    </div>
+                    <div class="vote_etoile">
+                        <p>{{ article.nbVoteDroite }}</p>
+                        <a href="{{ path('argument',{'idArticle':article.id,'couleur':'0'}) }}" class="lienEtoile">
+                            <img class="etoileImg" src="{{ asset('images/interne/etoileRouge.png') }}" alt="Une étoile rouge">
+                            <img class="etoileImg" src="{{ asset('images/interne/etoileRouge.png') }}" alt="une étoile rouge">
+                            <img class="etoileImg" src="{{ asset('images/interne/etoileRouge.png') }}" alt="une étoile bleu">
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block title %} Ajouter un article {% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+{% endblock %}
+{%  block body %}
+    <section>
+        <div class="cadreForm">
+        <div class="cadre">
+        <article>
+           {{ form_start(form)}}
+            {{ form_widget(form) }}
+            <button type="submit">Envoyer</button>
+            {{ form_end(form) }}
+        </article>
+        </div>
+        </div>
+    </section>
+{% endblock %}

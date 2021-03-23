@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/interpage.css') }}">
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            {#{{ encore_entry_link_tags('app') }}#}
+        {% endblock %}
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+    </head>
+    <body>
+    <header class="bandeau">
+        <h1 class="titreSite">VargumentS</h1>
+        <ul class="menu">
+            <li><a href="{{ path('home') }}" class="lienMenu">Home</a></li>
+            <li><a href="{{ path('ajouterArticle') }}" class="lienMenu">New Post</a></li>
+            <li><a href="{{ path('app_login') }}" class="lienMenu">Connexion</a></li>
+        </ul>
+    </header>
+        {% block body %}{% endblock %}
+    </body>
+</html>

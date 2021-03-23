@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block title %}Lire un article{%  endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/article.css') }}">
+{% endblock %}
+{% block body %}
+    <section>
+        {% if article.nomImage is not empty %}
+        <img src="/images/articles/{{ asset(article.nomImage) }}" class="imgContent" alt="">
+        {% endif %}
+        <article class="article">
+            <h1>{{ article.sujet }}</h1>
+            <p>{{ article.texte }}</p>
+        </article>
+    </section>
+    <section class="vote">
+        <p>{{ article.nbVoteGauche }}
+            <a href="{{ path('argument',{'idArticle':article.id, "couleur":"1"}) }}">
+                <img src="{{ asset('images/interne/etoileBleu.png') }}" alt="Une étoile bleu">
+                <img src="{{ asset('images/interne/etoileBleu.png') }}" alt="Une étoile bleu">
+                <img src="{{ asset('images/interne/etoileBleu.png') }}" alt="Une étoile bleu">
+            </a>
+        </p>
+        <p>{{ article.nbVoteDroite }}
+            <a href="{{ path('argument',{'idArticle':article.id,"couleur":"0"}) }}">
+                <img src="{{ asset('images/interne/etoileRouge.png') }}" alt="Une étoile rouge">
+                <img src="{{ asset('images/interne/etoileRouge.png') }}" alt="Une étoile rouge">
+                <img src="{{ asset('images/interne/etoileRouge.png') }}" alt="Une étoile rouge">
+            </a>
+        </p>
+    </section>
+    {% if etoile is not empty %}
+    <p  class="commentaire" style="border: black solid 1px; margin-left: 35%; margin-right: 35%; height: 8rem; overflow: scroll">
+        Commentaire: {{ etoile.argument}}
+        {% endif %}
+    </p>
+{% endblock %}

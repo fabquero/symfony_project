@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block title %}Ajouter un argument{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/argument.css') }}">
+{% endblock %}
+{% block body %}
+    <h1 class="avis">Votre avis ?</h1>
+    <div class="conteneur">
+{{ form_start(form) }}
+{{ form_widget(form) }}
+    <button type="submit">Envoyer</button>
+{{ form_end(form) }}
+    </div>
+{% endblock %}
